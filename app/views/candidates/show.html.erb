@@ -1,6 +1,41 @@
-<% @candidate.jobs.each do |job| %>
-  <%= job.name %>
-  <%= job.created_at %>
-<% end %>
-
-<%= link_to 'back to all list', root_path %>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3><%= @candidate.name %></h3>
+    </div>
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-action active">Contact</li>
+              <li class="list-group-item"><%= "Email: #{@candidate.email}" %></li>
+              <li class="list-group-item"><%= "Phone: #{@candidate.phone}" %></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="list-gro§up">
+              <li class="list-group-item list-group-item-action active">Jobs</li>
+                <% @jobs.each do |job| %>
+                  <li class="list-group-item">
+                    <p><%= "#{job.name} - #{job.created_at.strftime('%Y, %b %d')}" %></p>
+                  </li>
+                <% end %>
+            </ul>
+          </div>
+        </div>
+        <ul class="list-group mt-4">
+          <li class="list-group-item list-group-item-action active">Notes</li>
+            <% @notes.each do |note| %>
+              <li class="list-group-item">
+                <p><%= note.content %></p>
+              </li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <%= link_to 'All list', root_path, class: "btn btn-lg btn-block" %>
+    </div>
+  </div>
+</div>

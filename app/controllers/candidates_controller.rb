@@ -2,6 +2,14 @@
 
 class CandidatesController < ApplicationController
   def show
-    @candidate = Candidate.find(params[:id])
+    @candidate = find_candidate
+    @jobs = @candidate.jobs.order("created_at DESC")
+    @notes = @candidate.notes
+  end
+
+  private
+
+  def find_candidate
+    Candidate.find(params[:id])
   end
 end

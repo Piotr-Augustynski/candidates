@@ -1,21 +1,35 @@
-<div>List of our candidates</div>
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>email</th>
-      <th>phone</th>
-      <th>options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @candidates.each do |candidate| %>
-      <tr>
-        <td><%= candidate.name %></td>
-        <td><%= candidate.email %></td>
-        <td><%= candidate.phone %></td>
-        <td><%= link_to 'Jobs',  candidate_path(candidate) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header text-center">
+      <h2>List of our candidates</h2>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive table-hover">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Jobs Count</th>
+              <th>Notes Count</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @candidates.each do |candidate| %>
+              <tr>
+                <td><%= candidate.name %></td>
+                <td><%= candidate.email %></td>
+                <td><%= candidate.phone %></td>
+                <td><%= candidate.jobs.count %></td>
+                <td><%= candidate.notes.count %></td>
+                <td><%= link_to 'View',  candidate_path(candidate), class: "btn btn-outline-secondary" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
