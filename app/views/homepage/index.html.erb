@@ -1,0 +1,21 @@
+<div>List of our candidates</div>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.name %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.phone %></td>
+        <td><%= link_to 'Jobs',  candidate_path(candidate) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

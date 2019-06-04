@@ -1,0 +1,6 @@
+<% @candidate.jobs.each do |job| %>
+  <%= job.name %>
+  <%= job.created_at %>
+<% end %>
+
+<%= link_to 'back to all list', root_path %>
