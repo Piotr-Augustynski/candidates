@@ -1,24 +1,17 @@
-# README
+# Candidates
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Practic project with importing data from CSV files.
 
-Things you may want to cover:
+## Installation:
 
-* Ruby version
+```bash
+* bundle install
+```
 
-* System dependencies
+```bash
+* rails db:setup
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+* rails data_import:import_all_of_data
+```
