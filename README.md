@@ -5,13 +5,17 @@ Practic project with importing data from CSV files.
 ## Installation:
 
 ```bash
-* bundle install
+bundle install
 ```
 
 ```bash
-* rails db:setup
+rails db:setup
 ```
 
 ```bash
-* rails data_import:import_all_of_data
+rails data_import:import_all_of_data
+```
+
+```bash
+rails server
 ```
