@@ -2,6 +2,6 @@
 
 class HomepageController < ApplicationController
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.includes(:jobs, :notes).order(:name)
   end
 end
