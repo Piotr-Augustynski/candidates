@@ -3,7 +3,7 @@
 class CandidatesController < ApplicationController
   def show
     @candidate = find_candidate
-    @jobs = @candidate.jobs.order("created_at DESC")
+    @jobs = @candidate.jobs.order('created_at DESC')
     @notes = @candidate.notes
   end
 
